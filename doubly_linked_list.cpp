@@ -6,6 +6,7 @@
 */
 
 #include "doubly_linked_list.h"
+#include "milestone11.h"
 
 DoublyLinkedList::DoublyLinkedList() :head(nullptr), tail(nullptr) {} // Constructor initializes an empty list with head and tail set to nullptr
 DoublyLinkedList::~DoublyLinkedList() {
@@ -151,20 +152,22 @@ void DoublyLinkedList::clear() {
 	tail = nullptr; // Reset tail to nullptr
 }
 void DoublyLinkedList::printList() {
-	DllNode* current = head;
-	std::string listStr = "List (head to tail): ";
-	while (current) {
+	DllNode* current = head; // Start from the head of the list
+	std::string listStr = "Here are the list contents: "; // Initialize a string to build the list representation
+	while (current) { // Traverse the list and append each node's key to the string
 		listStr += std::to_string(current->key) + " ";
 		current = current->next;
 	}
-	logToFileAndConsole(listStr);
+	listStr += "End of List \n\n"; // Append a marker to indicate the end of the list
+	logToFileAndConsole(listStr); // Log the list to both the console and the output file
 }
 void DoublyLinkedList::reversePrintList() {
-	DllNode* current = tail;
-	std::string listStr = "List (tail to head): ";
-	while (current) {
+	DllNode* current = tail; // Start from the tail of the list
+	std::string listStr = "Here are the list contents reversed: "; // Initialize a string to build the reversed list representation
+	while (current) { // Traverse the list in reverse and append each node's key to the string
 		listStr += std::to_string(current->key) + " ";
 		current = current->prev;
 	}
-	logToFileAndConsole(listStr);
+	listStr += "End of List \n\n"; // Append a marker to indicate the end of the list
+	logToFileAndConsole(listStr); // Log the reversed list to both the console and the output file
 }
