@@ -6,7 +6,7 @@
 */
 
 #include "doubly_linked_list.h"
-#include "milestone11.h"
+#include "milestone1.h"
 
 DoublyLinkedList::DoublyLinkedList() :head(nullptr), tail(nullptr) {} // Constructor initializes an empty list with head and tail set to nullptr
 DoublyLinkedList::~DoublyLinkedList() {
@@ -171,3 +171,4 @@ void DoublyLinkedList::reversePrintList() {
 	listStr += "End of List \n\n"; // Append a marker to indicate the end of the list
 	logToFileAndConsole(listStr); // Log the reversed list to both the console and the output file
 }
+
